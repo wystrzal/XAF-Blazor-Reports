@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <NavigationItems>
+    <Items>
+      <Item Id="Default">
+        <Items>
+          <Item Id="Event_ListView" Removed="True" />
+          <Item Id="Note" Removed="True" />
+        </Items>
+      </Item>
+      <Item Id="Reports">
+        <Items>
+          <Item Id="Analysis_ListView" Removed="True" />
+          <Item Id="ReportsV2" IsNewNode="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Views>
+    <DetailView Id="Contact_DetailView">
+      <Items>
+        <PropertyEditor Id="Photo" ImageEditorFixedHeight="190" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Person">
+              <LayoutGroup Id="Person_col1" Removed="True" />
+              <LayoutGroup Id="Person_col2" Removed="True">
+                <LayoutItem Id="Photo" ShowCaption="False" ViewItem="Photo" />
+              </LayoutGroup>
+              <LayoutGroup Id="Person_inner" Caption="Person_inner" Direction="Horizontal" IsNewNode="True">
+                <LayoutGroup Id="Person_col1" Index="0" Direction="Horizontal" RelativeSize="85" ShowCaption="False" IsNewNode="True">
+                  <LayoutGroup Id="Person_col1a" ShowCaption="False" Index="0" RelativeSize="50" IsNewNode="True">
+                    <LayoutItem Id="FirstName" ViewItem="FirstName" Index="0" RelativeSize="28.571428571428573" IsNewNode="True" />
+                    <LayoutItem Id="MiddleName" ViewItem="MiddleName" Index="1" RelativeSize="21.428571428571427" IsNewNode="True" />
+                    <LayoutItem Id="LastName" ViewItem="LastName" Index="2" RelativeSize="21.428571428571427" IsNewNode="True" />
+                    <LayoutItem Id="FullName" ViewItem="FullName" Index="3" RelativeSize="21.428571428571427" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Person_col1b" ShowCaption="False" Index="1" RelativeSize="50" IsNewNode="True">
+                    <LayoutItem Id="TitleOfCourtesy" ViewItem="TitleOfCourtesy" Index="0" RelativeSize="28.571428571428573" IsNewNode="True" />
+                    <LayoutItem Id="Email" ViewItem="Email" Index="1" RelativeSize="21.428571428571427" IsNewNode="True" />
+                    <LayoutItem Id="Birthday" ViewItem="Birthday" Index="2" RelativeSize="21.428571428571427" IsNewNode="True" />
+                    <LayoutItem Id="Address1" ViewItem="Address1" Index="3" RelativeSize="28.571428571428573" IsNewNode="True" />
+                  </LayoutGroup>
+                </LayoutGroup>
+                <LayoutGroup Id="Person_col2" Index="1" RelativeSize="15" ShowCaption="False" IsNewNode="True">
+                  <LayoutItem Id="Photo" ViewItem="Photo" ShowCaption="False" Index="0" RelativeSize="100" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Contact_ListView">
+      <Columns>
+        <ColumnInfo Id="Photo" Index="-1" ImageEditorCustomHeight="70" SortIndex="-1" SortOrder="None" />
+        <ColumnInfo Id="TitleOfCourtesy" Index="0" />
+        <ColumnInfo Id="LastName" Width="-1" />
+      </Columns>
+    </ListView>
+    <ListView Id="Resume_Portfolio_ListView">
+      <Columns>
+        <ColumnInfo Id="File" SortIndex="-1" SortOrder="None" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Department_DetailView">
+      <Items>
+        <PropertyEditor Id="Contacts" />
+        <PropertyEditor Id="Positions" LookupEditorMode="AllItems" />
+      </Items>
+    </DetailView>
+    <ListView Id="DemoTask_ListView">
+      <Columns>
+        <ColumnInfo Id="AssignedTo" Index="-1" />
+      </Columns>
+    </ListView>
+    <DetailView Id="AuthenticationStandardLogonParameters_DetailView_Demo" DefaultFocusedItem="UserName" CaptionLocation="Top">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="RootGroup">
+            <LayoutGroup Id="ImageGroup">
+              <LayoutItem Id="LogonImage" Removed="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="EditorsGroup">
+              <LayoutGroup Id="Text">
+                <LayoutItem Id="LogonText" />
+                <LayoutItem Id="WelcomeText" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Editors" RelativeSize="7.2">
+                <LayoutItem Id="UserName" Index="0" />
+                <LayoutItem Id="Password" Index="1" />
+              </LayoutGroup>
+              <LayoutGroup Id="PasswordHintGroup">
+                <LayoutItem Id="PasswordHint" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

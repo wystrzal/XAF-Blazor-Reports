@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?><Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Configurations>Debug;Release;EasyTest</Configurations>
+    <AssemblyName>MainDemo.Module</AssemblyName>
+    <RootNamespace>MainDemo.Module</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'EasyTest|AnyCPU' ">
+    <DefineConstants>TRACE;DEBUG;EASYTEST</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="BusinessObjects\**\*.cs" />
+    <Compile Include="CodeRules\**\*.cs" />
+    <Compile Include="Controllers\**\*.cs" />
+    <Compile Include="DatabaseUpdate\**\*.cs" />
+    <Compile Include="Properties\**\*.cs" />
+    <Compile Include="Reports\**\*.cs" />
+    <Compile Include="DemoDbEngineDetectorHelper.cs" />
+    <Compile Include="DemoXPODatabaseHelper.cs" />
+    <Compile Include="MainDemoModule.cs" />
+    <Compile Include="MainDemoModule.Designer.cs" />
+    <Compile Include="UseSQLAlternativeInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BusinessObjects\ReadMe.txt" />
+    <Content Include="Controllers\ReadMe.txt" />
+    <Content Include="DatabaseUpdate\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controllers\**\*.resx" />
+    <EmbeddedResource Include="DatabaseUpdate\**\*.xml" />
+    <EmbeddedResource Include="DatabaseUpdate\**\*.pdf" />
+    <EmbeddedResource Include="Reports\**\*.resx" />
+    <EmbeddedResource Include="MainDemoModule.resx" />
+    <EmbeddedResource Include="Model.DesignedDiffs.Localization.de.xafml" />
+    <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DevExpress.ExpressApp.Core.All" Version="20.2.6" />
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0" />
+    <PackageReference Include="System.Drawing.Common" Version="4.6.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.6.1" />
+  </ItemGroup>
+</Project>

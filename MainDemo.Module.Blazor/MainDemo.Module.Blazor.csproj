@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?><Project Sdk="Microsoft.NET.Sdk.Razor">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <Configurations>Debug;Release;EasyTest</Configurations>
+    <RazorLangVersion>3.0</RazorLangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'EasyTest|AnyCPU' ">
+    <DefineConstants>TRACE;DEBUG;EASYTEST</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\**\*.cs" />
+    <Compile Include="CustomDocumentOperationService.cs" />
+    <Compile Include="CustomTypePropertyEditor.cs" />
+    <Compile Include="DefineReportViewerCallbackController.cs" />
+    <Compile Include="MainDemoBlazorModule.cs" />
+    <Compile Include="MainDemoBlazorModule.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MainDemo.Module\MainDemo.Module.NetStandard.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DevExpress.ExpressApp.Blazor.All" Version="20.2.6" />
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ItemGroup>
+</Project>
