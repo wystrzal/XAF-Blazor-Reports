@@ -16,7 +16,8 @@ namespace MainDemo.Module.Blazor
 
         public override DocumentOperationResponse PerformOperation(DocumentOperationRequest request, PrintingSystemBase initialPrintingSystem, PrintingSystemBase printingSystemWithEditingFields)
         {
-            //printingSystemWithEditingFields.ExportToPdf();
+            string reportPath = @"c:\\Temp\Test.pdf";
+            printingSystemWithEditingFields.ExportToPdf(reportPath);
             return base.PerformOperation(request, initialPrintingSystem, printingSystemWithEditingFields);
         }
     }

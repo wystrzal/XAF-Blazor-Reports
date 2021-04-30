@@ -53,7 +53,7 @@ namespace MainDemo.Blazor.ServerSide {
                 options.LoginPath = "/LoginPage";
             });
 
-            DefaultWebDocumentViewerContainer.Register<DocumentOperationService, CustomDocumentOperationService>();
+            services.AddSingleton<DocumentOperationService, CustomDocumentOperationService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
