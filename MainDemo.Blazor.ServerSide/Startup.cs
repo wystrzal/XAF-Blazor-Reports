@@ -52,8 +52,6 @@ namespace MainDemo.Blazor.ServerSide {
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options => {
                 options.LoginPath = "/LoginPage";
             });
-
-            services.AddSingleton<DocumentOperationService, CustomDocumentOperationService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
