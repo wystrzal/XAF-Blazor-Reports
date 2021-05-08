@@ -2,6 +2,7 @@
 using DevExpress.ExpressApp.Actions;
 using DevExpress.ExpressApp.ReportsV2;
 using DevExpress.ExpressApp.ReportsV2.Blazor;
+using DevExpress.ExpressApp.ReportsV2.Blazor.Components.Models;
 using DevExpress.XtraReports.UI;
 using System;
 using System.Collections.Generic;
@@ -14,21 +15,19 @@ namespace MainDemo.Module.Blazor
         public ReportViewerController()
         {
             TargetViewId = ReportsBlazorModuleV2.ReportViewerDetailViewName;
-            PopupWindowShowAction action = new PopupWindowShowAction(this, "ShowCurrentObject", "View");
-            action.CustomizePopupWindowParams += Action_CustomizePopupWindowParams;
         }
-        private void Action_CustomizePopupWindowParams(object sender, CustomizePopupWindowParamsEventArgs e)
-        {
-            IReportDataV2 reportData = (IReportDataV2)View.CurrentObject;
-            XtraReport report = ReportDataProvider.ReportsStorage.LoadReport(reportData);
-            ReportsModuleV2 reportsModule = ReportsModuleV2.FindReportsModule(Application.Modules);
-            reportsModule.ReportsDataSourceHelper.SetupBeforePrint(report);
-            report.CreateDocument();
-            Object currentReportObject = report.GetCurrentRow();
-            IObjectSpace objectSpace = Application.CreateObjectSpace(currentReportObject.GetType());
-            e.View = Application.CreateDetailView(objectSpace, objectSpace.GetObject(currentReportObject));
 
-            report.ExportToPdf(@"c:\\Temp\Test.pdf");
+        protected override void OnActivated()
+        {
+            base.OnActivated();
+            View.CustomizeViewItemControl<ReportViewerViewItem>(this, CustomizeReportViewerViewItem);
+        }
+
+        private void CustomizeReportViewerViewItem(ReportViewerViewItem reportViewerViewItem)
+        {
+            ReportViewerViewItem.DxDocumentViewerAdapter adapter = (ReportViewerViewItem.DxDocumentViewerAdapter)reportViewerViewItem.Control;
+            DxDocumentViewerCallbacksModel callbacks = adapter.CallbacksModel;
+            callbacks.CustomizeMenuActions = callbacks.CustomizeMenuActions = "onCustomizeMenuActions";
         }
     }
 }

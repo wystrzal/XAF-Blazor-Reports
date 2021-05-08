@@ -16,9 +16,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Controllers\**\*.cs" />
+    <Compile Include="CustomDocumentOperationService.cs" />
     <Compile Include="CustomTypePropertyEditor.cs" />
+    <Compile Include="ListViewController.cs" />
     <Compile Include="MainDemoBlazorModule.cs" />
     <Compile Include="MainDemoBlazorModule.Designer.cs" />
+    <Compile Include="ReportStorage.cs" />
     <Compile Include="ReportViewerController.cs" />
   </ItemGroup>
   <ItemGroup>

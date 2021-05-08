@@ -12,6 +12,27 @@
     <!-- meta name="theme-color" content="#000000" -->
     <title>MainDemo.Blazor</title>
     <base href="~/" />
+    <style>
+        .custom-button {
+            background-color: red;
+        }
+    </style>
+    <script>
+        window.onCustomizeMenuActions = (s, e) => {
+            e.Actions.push({
+                text: 'Email',
+                imageClassName: 'custom-button',
+                disabled: s.dx.ko.observable(false),
+                visible: true,
+                hasSeparator: true,
+                clickAction: function (report) {
+                    s.PerformCustomDocumentOperation('@HttpContext.User.Identity.Name');
+                },
+                hotKey: { ctrlKey: true, keyCode: 'Z'.charCodeAt(0) },
+                container: 'toolbar'
+            })
+        }
+    </script>
 </head>
 <body>
     @{
